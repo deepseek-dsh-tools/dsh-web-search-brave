@@ -1,0 +1,8 @@
+# dsh-web-search-brave bundle patch：只把 provider 自己插进装配树。
+# 配置不放这里 —— profile 的 cordis.patch.yml 用顶层 `- id: web-search-brave` + `config:` 覆盖，
+# 默认值在 lib/index.js 的 DEFAULTS（count 10 / endpoint / extraSnippets / safesearch）。
+#
+# 另外必须让 web 工具选中它：profile 里 `- id: web` 的 config 要写 `searchProvider: brave`。
+- insert:
+    - id: web-search-brave
+      name: 'dsh-web-search-brave'

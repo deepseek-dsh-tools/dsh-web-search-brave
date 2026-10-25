@@ -1,0 +1,27 @@
+{
+  "name": "dsh-web-search-brave",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Brave Search provider for the DSH web seam (rebuilt 2026-10-25 after the installer accident)",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-web": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
